@@ -6,7 +6,7 @@
     }
 
     var appName = getAppName();
-    let modulesResouce = `${appName}.modules.json`;
+    let modulesResource = `${appName}.modules.json`;
 
     const { fetch: originalFetch } = window;
 
@@ -14,7 +14,7 @@
         let [resource, config] = args;
 
         if (resource === '_framework/blazor.modules.json') {
-            resource = modulesResouce;
+            resource = modulesResource;
             window.fetch = originalFetch;
         }
 
