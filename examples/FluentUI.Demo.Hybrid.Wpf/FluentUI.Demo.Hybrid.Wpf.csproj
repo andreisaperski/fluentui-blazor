@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishFluentIconAssets>true</PublishFluentIconAssets>
+    <PublishFluentEmojiAssets>true</PublishFluentEmojiAssets>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="7.0.86" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FluentUI.Demo.Hybrid.Shared\FluentUI.Demo.Hybrid.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+    <CompilerVisibleProperty Include="PublishFluentIconAssets" />
+    <CompilerVisibleProperty Include="PublishFluentEmojiAssets" />
+    <CompilerVisibleProperty Include="FluentEmojiStyles" />
+    <CompilerVisibleProperty Include="FluentEmojiGroups" />
+    <CompilerVisibleProperty Include="FluentIconSizes" />
+    <CompilerVisibleProperty Include="FluentIconVariants" />
+    <ProjectReference Include="..\..\src\Microsoft.Fast.Components.FluentUI.Configuration\Microsoft.Fast.Components.FluentUI.Configuration.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FluentUI.Demo.Hybrid.MAUI"
+             xmlns:hsc="clr-namespace:FluentUI.Demo.Hybrid.Shared.Components;assembly=FluentUI.Demo.Hybrid.Shared"
+             xmlns:ancweb="clr-namespace:Microsoft.AspNetCore.Components.Web;assembly=Microsoft.AspNetCore.Components.Web"
+             x:Class="FluentUI.Demo.Hybrid.MAUI.MainPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+        <BlazorWebView.RootComponents>
+            <RootComponent Selector="#app" ComponentType="{x:Type hsc:DemoAppComponent}" />
+            <RootComponent Selector="head::after" ComponentType="{x:Type ancweb:HeadOutlet}" />
+        </BlazorWebView.RootComponents>
+    </BlazorWebView>
+
+</ContentPage>
