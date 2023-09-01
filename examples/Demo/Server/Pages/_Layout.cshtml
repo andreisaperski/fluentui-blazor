@@ -8,6 +8,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="~/" />
+    <style>
+        :root {
+            --neutral-base-color: #212121;
+            --neutral-fill-layer-rest: #ffffff;
+        }
+        @@media(prefers-color-scheme: dark) {
+            :root {
+                --neutral-base-color: #ffffff;
+                --neutral-fill-layer-rest: #464646;
+            }
+        }
+
+        body,
+        #container {
+            color: var(--neutral-base-color);
+            background-color: var(--neutral-fill-layer-rest);
+        }
+    </style>
     <link href="_content/FluentUI.Demo.Shared/css/site.css" rel="stylesheet" />
     <link href="FluentUI.Demo.Server.styles.css" rel="stylesheet" />
     

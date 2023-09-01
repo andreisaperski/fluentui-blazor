@@ -157,6 +157,9 @@ export function afterStarted(blazor) {
 }
 
 export function beforeStart(options, extensions) {
+    var initialBaseLayerLuminance = window.matchMedia("(prefers-color-scheme: dark)").matches ? 0.23 : 1.0;
+    window['InitialBaseLayerLuminance'] = initialBaseLayerLuminance;
+
     var wcScript = document.createElement('script');
     wcScript.type = 'module';
     wcScript.src = '/_content/Microsoft.Fast.Components.FluentUI/js/web-components-v2.5.16.min.js';
